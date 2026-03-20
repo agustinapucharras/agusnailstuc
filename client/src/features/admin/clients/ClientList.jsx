@@ -75,7 +75,7 @@ const styles = {
     boxShadow: "var(--shadow-lg)",
   },
   modalHeader: {
-    background: "var(--color-primary)",
+    background: "var(--color-darkest)",
     color: "white",
     padding: "1.5rem",
     borderRadius: "var(--radius-lg) var(--radius-lg) 0 0",
@@ -183,7 +183,7 @@ const ClientList = () => {
       }
     } catch (err) {
       console.error(err);
-      toast.error("Error al buscar tutores");
+      toast.error("Error al buscar clientes");
     } finally {
       setLoading(false);
     }
@@ -230,12 +230,12 @@ const ClientList = () => {
       const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
       await api.put(`/clients/${editingClient._id}`, formData, { headers });
-      toast.success("Tutor actualizado exitosamente");
+      toast.success("Cliente actualizado exitosamente");
       handleCloseEdit();
       fetchClients(searchTerm, page);
     } catch (err) {
       toast.error(
-        "Error al actualizar tutor: " +
+        "Error al actualizar cliente: " +
           (err.response?.data?.error || err.message),
       );
     }
@@ -479,7 +479,7 @@ const ClientList = () => {
       {showEditModal && editingClient && (
         <div style={styles.modal}>
           <div style={styles.modalContent}>
-            <h3 style={styles.modalHeader}>Editar Tutor</h3>
+            <h3 style={styles.modalHeader}>Editar Cliente</h3>
             <div style={styles.modalBody}>
               <form onSubmit={handleSubmitEdit}>
                 <div style={styles.formGroup}>
@@ -494,23 +494,6 @@ const ClientList = () => {
                     }
                     required
                     minLength={3}
-                  />
-                </div>
-                <div style={styles.formGroup}>
-                  <label style={styles.label}>DNI</label>
-                  <input
-                    type="text"
-                    className="input"
-                    style={styles.input}
-                    value={formData.dni}
-                    onChange={(e) => {
-                      // Solo números
-                      if (/^\d*$/.test(e.target.value)) {
-                        setFormData({ ...formData, dni: e.target.value });
-                      }
-                    }}
-                    required
-                    maxLength={8}
                   />
                 </div>
                 <div style={styles.formGroup}>

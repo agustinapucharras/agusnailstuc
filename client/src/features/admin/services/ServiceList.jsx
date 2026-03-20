@@ -441,7 +441,7 @@ const ServiceList = () => {
                     <option value={30}>30 minutos</option>
                     <option value={45}>45 minutos</option>
                     <option value={60}>60 minutos (1 hora)</option>
-                    <option value={60}>120 minutos (2 horas)</option>
+                    <option value={120}>120 minutos (2 horas)</option>
                   </select>
                   <small
                     style={{

@@ -7,7 +7,7 @@ const clientSchema = new mongoose.Schema({
   }, 
   dni: { 
     type: String, 
-    required: true, 
+    required: false, 
     unique: true 
   }, 
   email: { 

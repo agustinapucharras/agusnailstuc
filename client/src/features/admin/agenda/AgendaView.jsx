@@ -360,12 +360,12 @@ const AgendaView = ({ onDateChange, onStatusChange }) => {
             <span className="material-symbols-rounded">assessment</span> Reporte
             Diario
           </button> */}
-          <button
+          {/* <button
             onClick={fetchAppointments}
             className="admin-btn admin-btn-secondary"
           >
             <span className="material-symbols-rounded">refresh</span> Actualizar
-          </button>
+          </button> */}
         </div>
       </div>
 
