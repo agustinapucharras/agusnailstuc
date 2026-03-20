@@ -1,0 +1,120 @@
+:root {
+  /* Color Palette */
+  --color-darkest: #f48fb1; /* un rosa medio para contrastes necesarios y legibilidad */
+  --color-primary: #ffccdc; /* rosa pastel (color principal) */
+  --color-secondary: #ffe6ef; /* rosa bebé */
+  --color-accent: #fb565b; /* coral medio, por si hace falta algún toque */
+  --color-light: #fff7fa; /* fondo muy claro */
+  
+  --color-bg-gradient: linear-gradient(135deg, #fff7fa 0%, #ffe6ef 100%);
+  --color-bg-page: #fffbfd;
+  --color-surface: #ffffff;
+  --color-text: #1a1a1a; /* casi negro para máxima legibilidad */
+  --color-text-muted: #555555; /* gris oscuro */
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 8px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 15px 30px rgba(0,0,0,0.12);
+  --shadow-input: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg-page);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent); 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary); 
+}
+
+/* Common Utilities */
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-darkest) 100%);
+  color: #1a1a1a; /* texto oscuro sobre el botón rosa para que se lea bien */
+  box-shadow: 0 4px 10px rgba(244, 143, 177, 0.3); /* sombra rosada */
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(244, 143, 177, 0.4);
+}
+
+input, select, textarea {
+  border: 1px solid #e1e4e8;
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 1rem;
+  transition: all 0.2s;
+  outline: none;
+  background-color: #fff;
+  box-shadow: var(--shadow-input);
+  width: 100%; /* Default to full width in most cases */
+  box-sizing: border-box;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 3px rgba(84, 131, 179, 0.15);
+}
+
+label {
+  font-weight: 600;
+  color: var(--color-darkest);
+  margin-bottom: 6px;
+  display: block;
+}
+
+h1, h2, h3 {
+    color: var(--color-darkest);
+    margin-top: 0;
+}

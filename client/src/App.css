@@ -1,0 +1,6 @@
+/* App-specific styles can go here if needed. 
+   Global styles are in index.css */
+.main-content {
+  min-height: 80vh;
+  padding: 2rem 0;
+}

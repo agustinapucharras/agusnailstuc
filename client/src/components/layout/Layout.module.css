@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .main {
+    padding: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: var(--spacing-sm) 0;
+  }
+}

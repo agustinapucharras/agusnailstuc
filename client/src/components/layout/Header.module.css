@@ -1,0 +1,159 @@
+.header {
+  background: linear-gradient(90deg, var(--color-darkest) 0%, var(--color-primary) 100%);
+  color: white;
+  padding: 1.25rem 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 10;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.iconWrapper {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  filter: brightness(1.1);
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(251, 243, 243, 0.673);
+}
+
+.subtitle {
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.adminButton {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(253, 173, 173, 0.474);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-md);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+
+.adminButton:hover {
+  background: rgba(253, 173, 173, 0.823);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(147, 146, 146, 0.2);
+}
+
+.adminButton:active {
+  transform: translateY(0);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Mobile - Diseño Fluido */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.8rem 0.6rem; /* Reducimos padding lateral */
+  }
+  
+  .logoContainer {
+    gap: 0.5rem; /* Menos espacio entre logo y texto */
+  }
+  
+  .logo {
+    width: 40px;  /* Logo un poco más pequeño */
+    height: 40px;
+  }
+  
+  .title {
+    font-size: 0.8rem; /* Tamaño más seguro para 360px */
+    white-space: nowrap; /* Evita que el nombre del colegio se parta en dos */
+  }
+  
+  .subtitle {
+    font-size: 0.45rem;
+    display: block; /* Asegura que ocupe su propia línea */
+  }
+  
+  .adminButton {
+    padding: 0.4rem 0.6rem; /* Padding en lugar de ancho fijo */
+    font-size: 0.55rem;
+    width: auto; 
+    min-width: fit-content;
+    height: auto; /* Deja que el contenido dicte la altura */
+    gap: 0.2rem;
+  }
+
+  /* Si el icono sigue molestando, podemos achicarlo más */
+  .adminButton span {
+    font-size: 14px !important; 
+  }
+}
+
+/* Tablet and medium phones */
+@media (min-width: 481px) and (max-width: 768px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+  
+  .logoContainer {
+    gap: 1rem;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+  }
+  
+  .subtitle {
+    font-size: 0.75rem;
+  }
+  
+  .adminButton {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.8rem;
+  }
+}

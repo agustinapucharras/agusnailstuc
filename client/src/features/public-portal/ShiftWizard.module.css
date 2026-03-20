@@ -1,0 +1,354 @@
+.wizardContainer {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+ 
+.content {
+  min-height: 400px;
+  animation: fadeIn 0.4s ease;
+}
+
+.stepTwoContainer {
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.colLeft {
+  flex: 1;
+}
+
+.colRight {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.stepActions {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1rem;
+}
+
+.btnNext {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-darkest) 100%);
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.btnNext:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.footerNav {
+  margin-top: 3rem;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding-top: 1.5rem;
+  display: flex;
+}
+
+.btnBack {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btnBack:hover {
+  color: var(--color-accent);
+}
+
+/* Success View */
+.successContainer {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.successCard {
+  background: var(--color-surface);
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid rgba(255,255,255,0.8);
+}
+
+.checkIcon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+  color: var(--color-darkest);
+  border-radius: 50%;
+  font-size: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.summaryBox {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  text-align: left;
+  margin: 2rem 0;
+  border-left: 4px solid var(--color-secondary);
+}
+
+.summaryBox p {
+  margin: 10px 0;
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+.btnHome {
+  background-color: var(--color-primary);
+  color: var(--color-darkest);
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  width: 100%;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btnHome:hover {
+   background-color: var(--color-darkest);
+   color: var(--color-primary);
+}
+
+.btnWhatsapp {
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  margin-top: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btnWhatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.btnWhatsapp svg {
+  width: 24px;
+  height: 24px;
+}
+
+.secondaryAction {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.whatsappTextDesktop {
+  display: inline;
+}
+
+.whatsappTextMobile {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablets/iPads - simple stacking sin modal */
+@media (min-width: 601px) and (max-width: 850px) {
+  .wizardContainer {
+    width: 96%; /* Un poco menos del 100% para ver el fondo */
+    max-width: 600px;
+    padding: 1rem;
+    margin: 0 auto; /* Centrado */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .stepTwoContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+  }
+  
+  .colLeft, .colRight {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* Reducción de fuentes para tablets */
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+  }
+  
+  p {
+    font-size: 0.95rem;
+  }
+  
+  .btnNext {
+    font-size: 0.95rem;
+    padding: 0.85rem 1.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .wizardContainer {
+    width: 96%; /* Un poco menos del 100% para ver el fondo */
+    padding: 0.75rem;
+    margin: 0 auto; /* Centrado */
+  }
+  
+  .stepTwoContainer {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .colLeft {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 2; /* Calendario va segundo en móvil */
+  }
+  
+  .colRight {
+    width: 100%;
+    order: 1; /* TimeSlots va primero en móvil */
+  }
+  
+  /* Reducción de fuentes para móviles */
+  h2 {
+    font-size: 1.35rem;
+  }
+  
+  h3 {
+    font-size: 1rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+  }
+  
+  label {
+    font-size: 0.9rem;
+  }
+  
+  input, textarea, select {
+    font-size: 0.9rem;
+  }
+  
+  .btnNext {
+    font-size: 0.95rem;
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .btnWhatsapp {
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    gap: 8px;
+  }
+  
+  .btnWhatsapp svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .successCard {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wizardContainer {
+    padding: 0.5rem 0;
+  }
+  
+  .stepTwoContainer {
+    gap: 1rem;
+  }
+  
+  .colLeft {
+    padding: 0;
+    order: 2;
+  }
+  
+  .colRight {
+    order: 1;
+  }
+  
+  .btnNext {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+  
+  .successCard {
+    padding: 1.5rem 1rem;
+  }
+  
+  .checkIcon {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+  
+  .summaryBox {
+    padding: 1rem;
+  }
+  
+  .btnWhatsapp {
+    padding: 0.85rem;
+    font-size: 0.9rem;
+  }
+  
+  .footerNav {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+  }
+}
