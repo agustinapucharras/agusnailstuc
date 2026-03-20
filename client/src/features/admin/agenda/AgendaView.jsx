@@ -610,13 +610,13 @@ const AgendaView = ({ onDateChange, onStatusChange }) => {
                                 </div>
                               </td>
                               <td
-                                data-label="Alumno"
+                                data-label="Cliente"
                                 style={{ fontWeight: "500" }}
                               >
-                                {app.student?.name}
+                                {app.client?.fullName}
                               </td>
-                              <td data-label="DNI" className="dni-cell">
-                                {app.student?.dni}
+                              <td data-label="Telefono" className="dni-cell">
+                                {app.client?.phone}
                               </td>
                               <td data-label="Trámite">
                                 <span
