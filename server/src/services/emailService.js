@@ -89,8 +89,7 @@ exports.sendConfirmation = async (to, appointment, service, isReminder = false) 
             </p>
             <p style="font-size: 16px; line-height: 1.6;">
               Te recordamos tu turno para <strong>${serviceName}</strong> el día 
-              <strong>${dateStr}</strong> a las <strong>${appointment.time} hs</strong> 
-              en el Colegio Santísimo Rosario.
+              <strong>${dateStr}</strong> a las <strong>${appointment.time} hs</strong>.
             </p>
             <p style="font-size: 16px; line-height: 1.6;">
               Por favor confirmar asistencia.
@@ -130,10 +129,9 @@ Detalles:
 - Fecha: ${appointment.date}
 - Hora: ${appointment.time}
 - Alumno: ${appointment.student?.name}
-- DNI Alumno: ${appointment.student?.dni}
 
 Gracias por utilizar nuestro sistema.
-Atte. Colegio Santísimo Rosario
+Atte. Agus Nails Tuc
 `;
         try {
             // Try to fetch custom template
