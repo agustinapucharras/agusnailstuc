@@ -79,7 +79,7 @@ exports.sendConfirmation = async (to, appointment, service, isReminder = false) 
         `;
     } else {
         subject = `Recordatorio de Turno - ${serviceName}`;
-        text = `Hola ${clientName}, te recordamos tu turno para ${serviceName} el día ${dateStr} a las ${appointment.time} hs en el Colegio Santísimo Rosario. Por favor confirmar asistencia.`;
+        text = `Hola ${clientName}, te recordamos tu turno para ${serviceName} el día ${dateStr} a las ${appointment.time} hs. Por favor confirmar asistencia.`;
 
         html = `
           <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">
@@ -128,7 +128,7 @@ Se ha confirmado su turno para el servicio: ${service.name}.
 Detalles:
 - Fecha: ${appointment.date}
 - Hora: ${appointment.time}
-- Alumno: ${appointment.student?.name}
+- Cliente: ${appointment.student?.name}
 
 Gracias por utilizar nuestro sistema.
 Atte. Agus Nails Tuc

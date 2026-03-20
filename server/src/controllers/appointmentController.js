@@ -232,22 +232,7 @@ exports.createAppointment = async (req, res, next) => {
         throw new Error('El servicio seleccionado no se encuentra activo actualmente.');
     }
 
-    // NEW: Check if student already has an active appointment for THIS SERVICE
-    // First find if student exists by DNI
-    const existingStudentToCheck = await Student.findOne({ dni: studentData.dni }).session(session);
-    if (existingStudentToCheck) {
-        const activeAppointment = await Appointment.findOne({
-            student: existingStudentToCheck._id,
-            service: serviceId, // 🔥 KEY: Only check for same service
-            status: { $in: ['pendiente', 'confirmado'] }
-        }).session(session);
-
-        if (activeAppointment) {
-            const error = new Error('Ya tiene un turno activo para este trámite. Por favor espere a que sea atendido o cancele el turno anterior.');
-            error.code = 409; 
-            throw error;
-        }
-    }
+    // Bloqueo de múltiples turnos por persona eliminado a petición.
 
     // 3. Find or Create Client (Tutor)
     let client = await Client.findOne({ dni: clientData.dni }).session(session);
@@ -610,7 +595,7 @@ const generateWhatsAppReminderLink = (appointment, template) => {
             .replace(/{dni}/g, appointment.student?.dni || '');
     } else {
         // Fallback default message
-        message = `Hola ${appointment.client.fullName}, te recordamos tu turno para ${serviceName} el día ${dateStr} a las ${appointment.time} hs en el Colegio Santísimo Rosario. Por favor confirmar asistencia.`;
+        message = `Hola ${appointment.client.fullName}, te recordamos tu turno para ${serviceName} el día ${dateStr} a las ${appointment.time} hs. Por favor confirmar asistencia.`;
     }
     
     return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
